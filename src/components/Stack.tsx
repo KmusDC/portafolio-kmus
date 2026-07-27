@@ -1,3 +1,4 @@
+
 import {
   SiReact,
   SiTypescript,
@@ -28,7 +29,7 @@ const stack: Tech[] = [
   { name: "Node.js",      icon: <SiNodedotjs />,    color: "#68A063", level: "aprendiendo"     },
   { name: "HTML5",        icon: <SiHtml5 />,        color: "#E34F26", level: "avanzado"      },
   { name: "Git",          icon: <SiGit />,          color: "#F05032", level: "aprendiendo"     },
-  { name: "GitHub",       icon: <SiGithub />,       color: "#ffffff", level: "aprendiendo"     }
+  { name: "GitHub",       icon: <SiGithub />,       color: "#c1c1c1", level: "aprendiendo"     }
 ]
 
 const levelColor: Record<Tech["level"], string> = {

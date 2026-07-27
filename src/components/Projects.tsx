@@ -183,23 +183,6 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* ── botón ver más ── */}
-        <div className="flex justify-center">
-          <a
-            href="#"
-            className="
-              px-7 py-3 rounded-full font-semibold text-sm
-              bg-white dark:bg-slate-800
-              text-blue-600 dark:text-blue-300
-              border border-blue-200 dark:border-slate-600
-              hover:bg-blue-50 dark:hover:bg-slate-700
-              shadow transition-all duration-200
-            "
-          >
-            Ver todos los proyectos →
-          </a>
-        </div>
-
       </div>
     </section>
   )

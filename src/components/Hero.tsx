@@ -47,21 +47,6 @@ const Hero = () => {
             />
           </div>
 
-          {/* badge estado */}
-          <div className="
-            absolute bottom-1 right-1
-            bg-white dark:bg-slate-800
-            border-2 border-blue-200 dark:border-slate-600
-            rounded-full px-2 py-0.5
-            flex items-center gap-1
-            shadow-md
-          ">
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            <span className="text-xs text-slate-600 dark:text-slate-300 font-medium">
-              disponible
-            </span>
-          </div>
-
         </div>
 
         {/* ── texto ── */}

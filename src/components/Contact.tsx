@@ -1,56 +1,79 @@
-import { useState } from "react"
+import { useState, type ReactNode } from "react";
+import githubIcon from "../assets/github_icon.png";
+import linkedinIcon from "../assets/linkedin_icon.png"
+import xIcon from "../assets/x_icon.png"
 
 type FormData = {
-  nombre: string
-  email: string
-  mensaje: string
-}
+  nombre: string;
+  email: string;
+  mensaje: string;
+};
 
-type FormStatus = "idle" | "sending" | "success" | "error"
+type FormStatus = "idle" | "sending" | "success" | "error";
 
 const initialForm: FormData = {
   nombre: "",
   email: "",
   mensaje: "",
-}
+};
 
 type SocialLink = {
-  label: string
-  href: string
-  icon: string
-  description: string
-}
+  label: string;
+  href: string;
+  icon: ReactNode;
+  description: string;
+};
 
 const socials: SocialLink[] = [
-  { label: "GitHub",   href: "#", icon: "🐙", description: "github.com/kmus"       },
-  { label: "LinkedIn", href: "#", icon: "💼", description: "linkedin.com/in/kmus"  },
-  { label: "Twitter",  href: "#", icon: "🐦", description: "@kmus"                 },
-  { label: "Email",    href: "#", icon: "📧", description: "kmusdc128@email.com"        },
-]
+  {
+    label: "GitHub",
+    href: "https://github.com/KmusDC",
+    icon: <img src={githubIcon} alt="" className="h-5 w-5 object-contain" />,
+    description: "github.com/KmusDev",
+  },
+  {
+    label: "Linkedin",
+    href: "https://www.linkedin.com/in/eduardo-rodriguez-0a6479176/",
+    icon: <img src={linkedinIcon} alt="" className="h-5 w-5 object-contain" />,
+    description: "Linkedin/Eduardo Rodriguez",
+  },
+  {
+    label: "X",
+    href: "https://x.com/KmusDC",
+    icon: <img src={xIcon} alt="" className="h-5 w-5 object-contain" />,
+    description: "x.com/KmusDC",
+  },
+  {
+    label: "Email",
+    href: "mailto:kmusdc128@gmail.com",
+    icon: "📧",
+    description: "kmusdc128@gmail.com",
+  },
+];
 
 const Contact = () => {
-  const [form, setForm]     = useState<FormData>(initialForm)
-  const [status, setStatus] = useState<FormStatus>("idle")
+  const [form, setForm] = useState<FormData>(initialForm);
+  const [status, setStatus] = useState<FormStatus>("idle");
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
-  }
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setStatus("sending")
+    e.preventDefault();
+    setStatus("sending");
 
     // simulación de envío → reemplaza con tu lógica real
-    await new Promise((res) => setTimeout(res, 1500))
+    await new Promise((res) => setTimeout(res, 1500));
 
-    setStatus("success")
-    setForm(initialForm)
+    setStatus("success");
+    setForm(initialForm);
 
     // vuelve a idle después de 4 segundos
-    setTimeout(() => setStatus("idle"), 4000)
-  }
+    setTimeout(() => setStatus("idle"), 4000);
+  };
 
   return (
     <section
@@ -63,33 +86,40 @@ const Contact = () => {
       "
     >
       <div className="max-w-5xl mx-auto flex flex-col gap-12">
-
         {/* ── encabezado ── */}
         <div className="flex flex-col items-center text-center gap-3">
-          <p className="
+          <p
+            className="
             text-xs font-semibold tracking-widest uppercase
             text-sky-500 dark:text-sky-400
-          ">
+          "
+          >
             hablemos
           </p>
 
-          <h2 className="
+          <h2
+            className="
             text-3xl md:text-4xl font-bold
             text-blue-900 dark:text-white
-          ">
+          "
+          >
             Ponte en
-            <span className="
+            <span
+              className="
               ml-2 text-transparent bg-clip-text
               bg-gradient-to-r from-blue-400 to-sky-500
-            ">
+            "
+            >
               contacto
             </span>
           </h2>
 
-          <p className="
+          <p
+            className="
             max-w-md text-sm md:text-base leading-relaxed
             text-slate-500 dark:text-slate-400
-          ">
+          "
+          >
             ¿Tienes un proyecto en mente? me encantaría escucharte.
           </p>
 
@@ -98,7 +128,6 @@ const Contact = () => {
 
         {/* ── contenido ── */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-
           {/* ── formulario ── */}
           <form
             onSubmit={handleSubmit}
@@ -197,35 +226,37 @@ const Contact = () => {
                 shadow transition-all duration-200
               "
             >
-              {status === "idle"    && "Enviar mensaje 🚀"}
+              {status === "idle" && "Enviar mensaje 🚀"}
               {status === "sending" && "Enviando...  ⏳"}
               {status === "success" && "¡Enviado! ✅"}
-              {status === "error"   && "Error, intenta de nuevo ❌"}
+              {status === "error" && "Error, intenta de nuevo ❌"}
             </button>
 
             {/* mensaje de éxito */}
             {status === "success" && (
-              <p className="
+              <p
+                className="
                 text-center text-sm font-medium
                 text-green-500 dark:text-green-400
                 animate-pulse
-              ">
+              "
+              >
                 ¡Gracias! Te responderé pronto 💙
               </p>
             )}
-
           </form>
 
           {/* ── info lateral ── */}
           <div className="flex flex-col gap-6">
-
             {/* disponibilidad */}
-            <div className="
+            <div
+              className="
               p-6 rounded-2xl
               bg-white dark:bg-slate-800
               border border-blue-100 dark:border-slate-700
               shadow-sm flex flex-col gap-3
-            ">
+            "
+            >
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse" />
                 <p className="text-sm font-semibold text-blue-900 dark:text-white">
@@ -233,14 +264,17 @@ const Contact = () => {
                 </p>
               </div>
               <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
-                Actualmente estoy abierto a nuevas oportunidades freelance o colaboraciones.
+                Actualmente estoy abierto a nuevas oportunidades freelance o
+                colaboraciones.
               </p>
 
               {/* tiempo respuesta */}
-              <div className="
+              <div
+                className="
                 flex items-center gap-3 mt-1 p-3 rounded-xl
                 bg-blue-50 dark:bg-slate-700
-              ">
+              "
+              >
                 <span className="text-xl">⚡</span>
                 <div>
                   <p className="text-xs font-semibold text-blue-700 dark:text-blue-300">
@@ -254,12 +288,14 @@ const Contact = () => {
             </div>
 
             {/* redes sociales */}
-            <div className="
+            <div
+              className="
               p-6 rounded-2xl
               bg-white dark:bg-slate-800
               border border-blue-100 dark:border-slate-700
               shadow-sm flex flex-col gap-4
-            ">
+            "
+            >
               <h3 className="text-sm font-bold text-blue-900 dark:text-white">
                 También me encuentras en
               </h3>
@@ -277,11 +313,13 @@ const Contact = () => {
                       transition-all duration-200 group
                     "
                   >
-                    <div className="
+                    <div
+                      className="
                       w-9 h-9 rounded-full flex items-center justify-center text-lg
                       bg-blue-100 dark:bg-slate-700
                       group-hover:scale-110 transition-transform duration-200
-                    ">
+                    "
+                    >
                       {social.icon}
                     </div>
 
@@ -294,23 +332,24 @@ const Contact = () => {
                       </p>
                     </div>
 
-                    <span className="
+                    <span
+                      className="
                       ml-auto text-blue-300 dark:text-slate-600
                       group-hover:text-blue-500 group-hover:translate-x-1
                       transition-all duration-200
-                    ">
+                    "
+                    >
                       →
                     </span>
                   </a>
                 ))}
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
