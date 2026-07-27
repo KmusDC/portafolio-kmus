@@ -1,6 +1,9 @@
-import Header from "./components/Header"
-import Hero from "./components/Hero"
+import Contact from "./components/Contact"
+import Footer from "./components/Footer"
+import Header   from "./components/Header"
+import Hero     from "./components/Hero"
 import Projects from "./components/Projects"
+import Stack    from "./components/Stack"
 
 function App() {
   return (
@@ -8,7 +11,9 @@ function App() {
       <Header />
       <Hero />
       <Projects />
-
+      <Stack />
+      <Contact />
+      <Footer />
     </div>
   )
 }

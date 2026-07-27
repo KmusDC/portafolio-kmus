@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import avatar from "../assets/avatar_kmus.png"; // ← agrega este import arriba del archivo
+import avatar from "../assets/avatar_kmus.png";// ← agrega este import arriba del archivo
 
 type NavLink = {
   label: string;
@@ -7,8 +7,10 @@ type NavLink = {
 };
 
 const links: NavLink[] = [
-  { label: "Proyectos", href: "#" },
-  { label: "Sobre mí", href: "#" },
+  { label: "Inicio", href: "#" },
+  { label: "Proyectos", href: "#proyectos" },
+  { label: "Stack",    href: "#stack"   },
+  { label: "Contacto", href: "#contacto" },
 ];
 
 const Header = () => {
@@ -74,17 +76,7 @@ const Header = () => {
             </a>
           ))}
 
-          <a
-            href="#"
-            className="
-              ml-3 px-5 py-2 rounded-full text-sm font-semibold
-              bg-blue-400 dark:bg-blue-600 text-white
-              hover:bg-blue-500 dark:hover:bg-blue-700
-              shadow transition-all duration-200
-            "
-          >
-            ✦ Contrátame
-          </a>
+        
         </nav>
 
         {/* ── controles derecha ── */}
@@ -166,18 +158,6 @@ const Header = () => {
               {link.label}
             </a>
           ))}
-
-          <a
-            href="#"
-            onClick={() => setMenuOpen(false)}
-            className="
-              mt-2 px-4 py-3 rounded-xl text-sm font-semibold
-              text-center bg-blue-400 dark:bg-blue-600 text-white
-              hover:bg-blue-500 transition-all duration-200
-            "
-          >
-            ✦ Contrátame
-          </a>
         </nav>
       </div>
 
