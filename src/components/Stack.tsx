@@ -131,11 +131,7 @@ const Stack = () => {
 
         {/* ── leyenda niveles ── */}
         <div className="flex flex-wrap justify-center gap-4">
-          {(Object.entries(levelColor) as [Tech["level"], string][]).map(([level, color]) => (
-            <div key={level} className="flex items-center gap-2">
-
-            </div>
-          ))}
+         
         </div>
 
       </div>

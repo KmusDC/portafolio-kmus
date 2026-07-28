@@ -7,6 +7,7 @@ type SocialLink = {
   label: string;
   href: string;
   icon: ReactNode;
+  
 };
 
 const socials: SocialLink[] = [

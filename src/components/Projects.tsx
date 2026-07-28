@@ -17,18 +17,18 @@ const projects: Project[] = [
     featured: true,
   },
   {
-    title: "Pokédex App",
-    description: "Aplicación que consume la PokéAPI con Axios, mostrando lista de pokémons con tipos, stats e imágenes.",
+    title: "Kmus Pokedex",
+    description: "Aplicación que consume la PokéAPI con Axios, mostrando lista de pokémons con tipos, stats y animaciones.",
     tags: ["React", "Axios", "PokeAPI"],
     emoji: "📖",
-    href: "#",
+    href: "https://kmus-pokeapi.netlify.app/",
   },
   {
     title: "Lista de Tareas",
     description: "App minimalista de tareas con TypeScript, operaciones CRUD y persistencia en localStorage.",
     tags: ["React", "TypeScript", "localStorage"],
     emoji: "📝",
-    href: "#",
+    href: "https://tasklist-kmus.netlify.app/",
   },
   {
     title: "Portafolio",

@@ -1,16 +1,32 @@
+import type { ReactNode } from "react";
 import avatar from "../assets/avatar_kmus.png"
+import githubIcon from "../assets/github_icon.png";
+import linkedinIcon from "../assets/linkedin_icon.png"
+import xIcon from "../assets/x_icon.png"
 
 type SocialLink = {
   label: string
   href: string
-  icon: string
+  icon: ReactNode
 }
 
 const socials: SocialLink[] = [
-  { label: "GitHub",    href: "#", icon: "🐙" },
-  { label: "LinkedIn",  href: "#", icon: "💼" },
-  { label: "Twitter",   href: "#", icon: "🐦" },
-]
+  {
+    label: "GitHub",
+    href: "https://github.com/KmusDC",
+    icon: <img src={githubIcon} alt="" className="h-5 w-5 object-contain" />,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/eduardo-rodriguez-0a6479176/",
+    icon: <img src={linkedinIcon} alt="" className="h-5 w-5 object-contain" />,
+  },
+  {
+    label: "X",
+    href: "https://x.com/KmusDC",
+    icon: <img src={xIcon} alt="" className="h-5 w-5 object-contain" />,
+  },
+];
 
 const Hero = () => {
   return (
@@ -144,6 +160,7 @@ const Hero = () => {
             <a
               key={social.label}
               href={social.href}
+              target="_blank"
               aria-label={social.label}
               className="
                 w-10 h-10 rounded-full flex items-center justify-center
