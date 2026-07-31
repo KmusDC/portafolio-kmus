@@ -13,7 +13,7 @@ const projects: Project[] = [
     description: "Videojuego de disparos hecho en React con controles táctiles, sistema de niveles, audio con Web Audio API y diseño responsive para móvil.",
     tags: ["React", "TypeScript", "Web Audio API", "Mobile"],
     emoji: "🎮",
-    href: "https://pedroyogame.netlify.app/",
+    href: "https://scape-from-pedroyo.netlify.app/",
     featured: true,
   },
   {
