@@ -1,3 +1,4 @@
+
 type Project = {
   title: string
   description: string
@@ -5,14 +6,15 @@ type Project = {
   emoji: string
   href: string
   featured?: boolean
+  imageAlt?: string
 }
-
 const projects: Project[] = [
   {
     title: "Escape from Pedroyo",
     description: "Videojuego de disparos hecho en React con controles táctiles, sistema de niveles, audio con Web Audio API y diseño responsive para móvil.",
     tags: ["React", "TypeScript", "Web Audio API", "Mobile"],
     emoji: "🎮",
+    imageAlt: "favicon Pedroyo",
     href: "https://scape-from-pedroyo.netlify.app/",
     featured: true,
   },
@@ -31,11 +33,12 @@ const projects: Project[] = [
     href: "https://tasklist-kmus.netlify.app/",
   },
   {
-    title: "Portafolio",
-    description: "Este mismo portafolio, construido con React, TypeScript y Tailwind v4. Dark mode, animaciones y diseño responsive.",
+    title: "KmusRetro.com",
+    description: "Mi página de Videojuegos Retro construida con React, TypeScript y Tailwind v4 con animaciones y diseño responsive.",
     tags: ["React", "TypeScript", "Tailwind v4"],
     emoji: "💼",
-    href: "#",
+    imageAlt: "favicon KmusRetro",
+    href: "https://kmusretro.com/",
     featured: true,
   },
 ]
